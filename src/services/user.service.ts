@@ -1,10 +1,10 @@
 import { omit } from 'lodash';
 import { FilterQuery, QueryOptions } from 'mongoose';
 import config from 'config';
-import userModel, { User } from '../models/user.model';
-import { excludedFields } from '../controllers/auth.controller';
-import { signJwt } from '../utils/jwt';
-import redisClient from '../utils/connectRedis';
+import userModel, { User } from '@/models/user.model';
+import { excludedFields } from '@/controllers/auth.controller';
+import { signJwt } from '@/utils/jwt';
+import redisClient from '@/utils/connectRedis';
 import { DocumentType } from '@typegoose/typegoose';
 
 // CreateUser service

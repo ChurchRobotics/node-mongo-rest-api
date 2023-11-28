@@ -1,17 +1,19 @@
 import { NextFunction, Request, Response } from 'express';
-import { findAllUsers } from '@/services/user.service';
 
-export const getMeHandler = (
+export const findPostHandler = (
   req: Request,
   res: Response,
   next: NextFunction
 ) => {
   try {
-    const user = res.locals.user;
+    const post = {
+      title: 'This is post #1',
+      body: 'This is the body of the post',
+    };
     res.status(200).json({
       status: 'success',
       data: {
-        user,
+        post,
       },
     });
   } catch (err: any) {
@@ -19,18 +21,27 @@ export const getMeHandler = (
   }
 };
 
-export const getAllUsersHandler = async (
+export const findAllPostsHandler = async (
   req: Request,
   res: Response,
   next: NextFunction
 ) => {
   try {
-    const users = await findAllUsers();
+    const posts = [
+      {
+        title: 'This is post #1',
+        body: 'This is the body of the post',
+      },
+      {
+        title: 'This is post #2',
+        body: 'This is the body of the post',
+      }
+    ];
     res.status(200).json({
       status: 'success',
-      result: users.length,
+      result: posts.length,
       data: {
-        users,
+        posts,
       },
     });
   } catch (err: any) {

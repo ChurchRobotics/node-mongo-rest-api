@@ -4,11 +4,11 @@ import {
   logoutHandler,
   refreshAccessTokenHandler,
   registerHandler,
-} from '../controllers/auth.controller';
-import { deserializeUser } from '../middleware/deserializeUser';
-import { requireUser } from '../middleware/requireUser';
-import { validate } from '../middleware/validate';
-import { createUserSchema, loginUserSchema } from '../schema/user.schema';
+} from '@/controllers/auth.controller';
+import { deserializeUser } from '@/middleware/deserializeUser';
+import { requireUser } from '@/middleware/requireUser';
+import { validate } from '@/middleware/validate';
+import { createUserSchema, loginUserSchema } from '@/schema/user.schema';
 
 const router = express.Router();
 

@@ -8,6 +8,18 @@
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "strictPropertyInitialization": false,
-    "skipLibCheck": true
-  }
+    "skipLibCheck": true,
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": [
+    "config",
+    "src",
+    "test"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
 }

@@ -4,9 +4,8 @@ import morgan from 'morgan';
 import config from 'config';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
-import connectDB from './utils/connectDB';
-import userRouter from './routes/user.route';
-import authRouter from './routes/auth.route';
+import connectDB from '@/utils/connectDB';
+import appRouter from "@/routes";
 
 const app = express();
 
@@ -30,8 +29,7 @@ app.use(
 if (process.env.NODE_ENV === 'development') app.use(morgan('dev'));
 
 // 5. Routes
-app.use('/api/users', userRouter);
-app.use('/api/auth', authRouter);
+appRouter.init(app);
 
 // Testing
 app.get(

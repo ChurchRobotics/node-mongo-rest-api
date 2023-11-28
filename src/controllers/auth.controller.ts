@@ -1,15 +1,15 @@
 import config from 'config';
 import { CookieOptions, NextFunction, Request, Response } from 'express';
-import { CreateUserInput, LoginUserInput } from '../schema/user.schema';
+import { CreateUserInput, LoginUserInput } from '@/schema/user.schema';
 import {
   createUser,
   findUser,
   findUserById,
   signToken,
-} from '../services/user.service';
-import AppError from '../utils/appError';
-import redisClient from '../utils/connectRedis';
-import { signJwt, verifyJwt } from '../utils/jwt';
+} from '@/services/user.service';
+import AppError from '@/utils/appError';
+import redisClient from '@/utils/connectRedis';
+import { signJwt, verifyJwt } from '@/utils/jwt';
 
 // Exclude this fields from the response
 export const excludedFields = ['password'];

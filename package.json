@@ -1,10 +1,11 @@
 {
-  "name": "JWT_Auth",
-  "version": "1.0.0",
+  "name": "node-mongo-rest-api",
+  "version": "0.0.1-dev",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "ts-node-dev --respawn --transpile-only src/app.ts"
+    "dev": "ts-node-dev -r tsconfig-paths/register --respawn --transpile-only src/app.ts",
+    "start": "ts-node -r tsconfig-paths/register --transpile-only src/app.ts"
   },
   "dependencies": {
     "@typegoose/typegoose": "^11.4.0",
@@ -17,8 +18,10 @@
     "jsonwebtoken": "^9.0.1",
     "lodash": "^4.17.21",
     "mongoose": "^7.4.1",
+    "morgan": "^1.10.0",
     "redis": "^4.6.7",
-    "ts-node-dev": "^2.0.0",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.2.0",
     "zod": "^3.21.4"
   },
   "devDependencies": {
@@ -31,7 +34,7 @@
     "@types/lodash": "^4.14.195",
     "@types/morgan": "^1.9.4",
     "@types/node": "^20.4.4",
-    "morgan": "^1.10.0",
+    "ts-node-dev": "^2.0.0",
     "typescript": "^5.1.6"
   }
 }

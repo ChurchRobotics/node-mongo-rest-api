@@ -1,8 +1,8 @@
 import express from 'express';
 import {
-  getAllUsersHandler,
-  getMeHandler,
-} from '@/controllers/user.controller';
+  findAllPostsHandler,
+  findPostHandler,
+} from '@/controllers/post.controller';
 import { deserializeUser } from '@/middleware/deserializeUser';
 import { requireUser } from '@/middleware/requireUser';
 import { restrictTo } from '@/middleware/restrictTo';
@@ -11,10 +11,10 @@ const router = express.Router();
 
 router.use(deserializeUser, requireUser);
 
-// Admin Get Users route
-router.get('/', restrictTo('admin'), getAllUsersHandler);
+// Admin Get Posts route
+router.get('/', restrictTo('admin'), findAllPostsHandler);
 
-// Get my info route
-router.get('/me', getMeHandler);
+// Get random post route
+router.get('/random', findPostHandler);
 
 export default router;
